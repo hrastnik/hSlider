@@ -8,12 +8,14 @@ var hSlider = (function() {
       this.activeSlideIndex = newActiveSlideIndex;
     }
 
-    constructor() {
+    constructor(sliderSelector) {
+      sliderSelector = sliderSelector || ".hSlider";
+
       this.activeSlideIndex = 0;
       this.oldActiveSlideIndex = -1;
       this.slides = [];
 
-      this.slider = document.querySelector(".hSlider");
+      this.slider = document.querySelector(sliderSelector);
       this.buttons = this.slider.querySelectorAll(".hButton");
       const slides = this.slider.querySelectorAll(".hSlide");
 
